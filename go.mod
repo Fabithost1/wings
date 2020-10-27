@@ -1,4 +1,4 @@
-module github.com/pterodactyl/wings
+module github.com/Fabithost1/wings
 
 go 1.13
 
