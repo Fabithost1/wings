@@ -6,7 +6,7 @@ import (
 	"github.com/apex/log"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/server"
+	"github.com/Fabithost1/wings/server"
 	"net/http"
 	"os"
 	"strconv"
