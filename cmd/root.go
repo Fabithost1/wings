@@ -21,12 +21,12 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/pkg/profile"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/router"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/sftp"
-	"github.com/pterodactyl/wings/system"
+	"github.com/Fabithost1/wings/config"
+	"github.com/Fabithost1/wings/environment"
+	"github.com/Fabithost1/wings/router"
+	"github.com/Fabithost1/wings/server"
+	"github.com/Fabithost1/wings/sftp"
+	"github.com/Fabithost1/wings/system"
 	"github.com/spf13/cobra"
 )
 
@@ -409,7 +409,7 @@ License:  https://github.com/pterodactyl/wings/blob/develop/LICENSE
 
 This software is made available under the terms of the MIT license.
 The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.%s`), system.Version, "\n\n")
+in all copies or substantial portions of the Software. UPDATED VERSION! v1.1%s`), system.Version, "\n\n")
 }
 
 func exitWithConfigurationNotice() {
