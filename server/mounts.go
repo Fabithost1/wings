@@ -2,8 +2,8 @@ package server
 
 import (
 	"github.com/apex/log"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/config"
+	"github.com/Fabithost1/wings/environment"
 	"path/filepath"
 	"strings"
 )
