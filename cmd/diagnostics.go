@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/environment"
 	"io"
 	"io/ioutil"
 	"net/http"
