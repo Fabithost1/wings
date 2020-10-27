@@ -16,7 +16,7 @@ import (
 
 	"github.com/apex/log"
 	"github.com/mitchellh/colorstring"
-	"github.com/pterodactyl/wings/loggers/cli"
+	"github.com/Fabithost1/wings/loggers/cli"
 	"golang.org/x/crypto/acme/autocert"
 
 	"github.com/pkg/errors"
