@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 	. "github.com/franela/goblin"
-	"github.com/pterodactyl/wings/config"
+	"github.com/Fabithost1/wings/config"
 	"io/ioutil"
 	"math/rand"
 	"os"
