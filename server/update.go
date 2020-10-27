@@ -5,7 +5,7 @@ import (
 	"github.com/buger/jsonparser"
 	"github.com/imdario/mergo"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/environment"
 )
 
 // Merges data passed through in JSON form into the existing server object.
