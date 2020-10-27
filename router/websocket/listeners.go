@@ -2,8 +2,8 @@ package websocket
 
 import (
 	"context"
-	"github.com/pterodactyl/wings/events"
-	"github.com/pterodactyl/wings/server"
+	"github.com/Fabithost1/wings/events"
+	"github.com/Fabithost1/wings/server"
 	"time"
 )
 
