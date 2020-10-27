@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/server/backup"
+	"github.com/Fabithost1/wings/server"
+	"github.com/Fabithost1/wings/server/backup"
 	"net/http"
 	"os"
 )
