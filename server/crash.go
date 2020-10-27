@@ -3,8 +3,8 @@ package server
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/config"
+	"github.com/Fabithost1/wings/environment"
 	"sync"
 	"time"
 )
