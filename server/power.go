@@ -3,9 +3,9 @@ package server
 import (
 	"context"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/server/filesystem"
+	"github.com/Fabithost1/wings/config"
+	"github.com/Fabithost1/wings/environment"
+	"github.com/Fabithost1/wings/server/filesystem"
 	"golang.org/x/sync/semaphore"
 	"os"
 	"time"
