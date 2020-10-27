@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/pterodactyl/wings/config"
+	"github.com/Fabithost1/wings/config"
 	"os"
 	"path/filepath"
 )
