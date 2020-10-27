@@ -5,9 +5,9 @@ import (
 	"github.com/asaskevich/govalidator"
 	"github.com/buger/jsonparser"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/api"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/server"
+	"github.com/Fabithost1/wings/api"
+	"github.com/Fabithost1/wings/environment"
+	"github.com/Fabithost1/wings/server"
 )
 
 type Installer struct {
