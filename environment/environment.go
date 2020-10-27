@@ -1,7 +1,7 @@
 package environment
 
 import (
-	"github.com/pterodactyl/wings/events"
+	"github.com/Fabithost1/wings/events"
 	"os"
 )
 
