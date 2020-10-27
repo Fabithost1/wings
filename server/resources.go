@@ -2,7 +2,7 @@ package server
 
 import (
 	"encoding/json"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/environment"
 	"sync"
 )
 
