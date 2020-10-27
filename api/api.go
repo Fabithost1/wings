@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/apex/log"
 	"github.com/pkg/errors"
-	"github.com/pterodactyl/wings/config"
+	"github.com/Fabithost1/wings/config"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -26,7 +26,7 @@ type PanelRequest struct {
 
 // Builds the base request instance that can be used with the HTTP client.
 func (r *PanelRequest) GetClient() *http.Client {
-	return &http.Client{Timeout: time.Second * 30}
+	return &http.Client{Timeout: time.Second * 3000}
 }
 
 func (r *PanelRequest) SetHeaders(req *http.Request) *http.Request {
