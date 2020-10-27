@@ -3,8 +3,8 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/server"
+	"github.com/Fabithost1/wings/config"
+	"github.com/Fabithost1/wings/server"
 	"net/http"
 	"strings"
 )
