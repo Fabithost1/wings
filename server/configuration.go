@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/pterodactyl/wings/environment"
+	"github.com/Fabithost1/wings/environment"
 	"sync"
 )
 
