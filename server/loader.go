@@ -7,11 +7,11 @@ import (
 	"github.com/creasty/defaults"
 	"github.com/gammazero/workerpool"
 	"github.com/pkg/errors"
-	"github.com/Fabithost1/wings/api"
-	"github.com/Fabithost1/wings/config"
-	"github.com/Fabithost1/wings/environment"
-	"github.com/Fabithost1/wings/environment/docker"
-	"github.com/Fabithost1/wings/server/filesystem"
+	"github.com/pterodactyl/wings/api"
+	"github.com/pterodactyl/wings/config"
+	"github.com/pterodactyl/wings/environment"
+	"github.com/pterodactyl/wings/environment/docker"
+	"github.com/pterodactyl/wings/server/filesystem"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -32,38 +32,40 @@ func LoadDirectory() error {
 	}
 
 	log.Info("fetching list of servers from API")
-	configs, rerr, err := api.NewRequester().GetAllServerConfigurations()
-	if err != nil || rerr != nil {
-		if err != nil {
+	configs, err := api.New().GetServers()
+	if err != nil {
+		if !api.IsRequestError(err) {
 			return errors.WithStack(err)
 		}
 
-		return errors.New(rerr.String())
+		return errors.New(err.Error())
 	}
 
 	start := time.Now()
 	log.WithField("total_configs", len(configs)).Info("processing servers returned by the API")
 
 	pool := workerpool.New(runtime.NumCPU())
-	for uuid, data := range configs {
-		uuid := uuid
+	log.Debugf("using %d workerpools to instantiate server instances", runtime.NumCPU())
+	for _, data := range configs {
 		data := data
 
 		pool.Submit(func() {
 			// Parse the json.RawMessage into an expected struct value. We do this here so that a single broken
 			// server does not cause the entire boot process to hang, and allows us to show more useful error
 			// messaging in the output.
-			d := api.ServerConfigurationResponse{}
+			d := api.ServerConfigurationResponse{
+				Settings: data.Settings,
+			}
 
-			log.WithField("server", uuid).Info("creating new server object from API response")
-			if err := json.Unmarshal(data, &d); err != nil {
-				log.WithField("server", uuid).WithField("error", err).Error("failed to parse server configuration from API response, skipping...")
+			log.WithField("server", data.Uuid).Info("creating new server object from API response")
+			if err := json.Unmarshal(data.ProcessConfiguration, &d.ProcessConfiguration); err != nil {
+				log.WithField("server", data.Uuid).WithField("error", err).Error("failed to parse server configuration from API response, skipping...")
 				return
 			}
 
 			s, err := FromConfiguration(d)
 			if err != nil {
-				log.WithField("server", uuid).WithField("error", err).Error("failed to load server, skipping...")
+				log.WithField("server", data.Uuid).WithField("error", err).Error("failed to load server, skipping...")
 				return
 			}
 
